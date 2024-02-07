@@ -4,91 +4,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Filter layout to work with text zoom</title>
+  <title>CSS Grid/Flexbox and Zoom text</title>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <div id="facets">
-    <div id="facetgrid" class="default-page-width grid-container">
-      <div id="facetlogo">
-        <h2 style="margin:0;padding:0"><a href="#pagetop"><img src="dd2020logo.svg"
-              alt="Search and Browse all Dawg Daze Events"></a></h2>
-      </div>
-      <div class="filter-container">
-        <div id="facetsearch">
-          <label for="search_box">Search</label>
-          <input type="text" id="search_box" class="searchbox">
+  <main>
+    <h1>CSS Grid/Flexbox and Zoom text</h1>
+    <p>This example uses a combination of CSS grid and flexbox so that elements will wrap correctly when using Zoom text in Firefox.</p>
+    <div id="facets">
+      <div id="facetgrid" class="default-page-width grid-container">
+        <div id="facetlogo">
+          <h2 style="margin:0;padding:0"><a href="#pagetop"><img src="dd2020logo.svg"
+                alt="Search and Browse all Dawg Daze Events"></a></h2>
         </div>
-        <div class="facetwrap">
-          <label for="event_facet_key">Events</label>
-          <select class="event-filter" id="event_facet_key">
-            <option value="all">All</option>
-            <option value="yes">Key Events</option>
-          </select>
+        <div class="filter-container">
+          <div id="facetsearch">
+            <label for="search_box">Search</label>
+            <input type="text" id="search_box" class="searchbox">
+          </div>
+          <div class="facetwrap">
+            <label for="event_facet_key">Events</label>
+            <select class="event-filter" id="event_facet_key">
+              <option value="all">All</option>
+              <option value="yes">Key Events</option>
+            </select>
+          </div>
+          <div class="facetwrap">
+            <label for="event_facet_type">Location</label>
+            <select class="event-filter" id="event_facet_type">
+              <option value="all">All</option>
+              <option value="In-person">In-person</option>
+              <option value="Virtual">Virtual</option>
+              <option value="Hybrid">Hybrid</option>
+            </select>
+          </div>
+          <div class="facetwrap">
+            <label for="event_facet_focus">Focus</label>
+            <select class="event-filter" id="event_facet_focus">
+              <option value="all">All</option>
+              <option value="Academic Success">Academic Success</option>
+              <option value="Career Exploration">Career Exploration</option>
+              <option value="Get Connected">Get Connected</option>
+              <option value="Just for Fun">Just for Fun</option>
+            </select>
+          </div>
+          <div class="facetwrap">
+            <label for="event_facet_topics">Topic</label>
+            <select class="event-filter" id="event_facet_topics">
+              <option value="all">All</option>
+              <option value="Health &amp; Well-being">Health &amp; Well-being</option>
+              <option value="Husky Spirit &amp; Tradition">Husky Spirit &amp; Tradition</option>
+              <option value="Info Session">Info Session</option>
+              <option value="Meet a New Friend">Meet a New Friend</option>
+              <option value="Personal Identity Development">Personal Identity Development</option>
+            </select>
+          </div>
+          <div class="facetwrap">
+            <label for="event_facet_audience">Audience</label>
+            <select class="event-filter" id="event_facet_audience">
+              <option value="all">All</option>
+              <option value="BIPOC">BIPOC</option>
+              <option value="First Gen">First Gen</option>
+              <option value="International">International</option>
+              <option value="LGBTQ">LGBTQ</option>
+              <option value="STEM">STEM</option>
+              <option value="Transfer">Transfer</option>
+              <option value="Veteran">Veteran</option>
+              <option value="All first year students">All first year students</option>
+            </select>
+          </div>
         </div>
-        <div class="facetwrap">
-          <label for="event_facet_type">Location</label>
-          <select class="event-filter" id="event_facet_type">
-            <option value="all">All</option>
-            <option value="In-person">In-person</option>
-            <option value="Virtual">Virtual</option>
-            <option value="Hybrid">Hybrid</option>
-          </select>
+        <div id="event_facet_date" class="jump-link-row">
+          <span>Jump to:</span>
+          <a role="button" class="no_offset" href="#pagetop">Top of page</a>
+          <a role="button" class="offset" href="#day1695168000">Sep&nbsp;20</a>
+          <a role="button" class="offset" href="#day1695254400">Sep&nbsp;21</a>
+          <a role="button" class="offset" href="#day1695340800">Sep&nbsp;22</a>
+          <a role="button" class="offset" href="#day1695427200">Sep&nbsp;23</a>
+          <a role="button" class="offset" href="#day1695513600">Sep&nbsp;24</a>
+          <a role="button" class="offset" href="#day1695600000">Sep&nbsp;25</a>
+          <a role="button" class="offset" href="#day1695686400">Sep&nbsp;26</a>
+          <a role="button" class="offset" href="#day1695772800">Sep&nbsp;27</a>
+          <a role="button" class="offset" href="#day1695859200">Sep&nbsp;28</a>
+          <a role="button" class="offset" href="#day1695945600">Sep&nbsp;29</a>
         </div>
-        <div class="facetwrap">
-          <label for="event_facet_focus">Focus</label>
-          <select class="event-filter" id="event_facet_focus">
-            <option value="all">All</option>
-            <option value="Academic Success">Academic Success</option>
-            <option value="Career Exploration">Career Exploration</option>
-            <option value="Get Connected">Get Connected</option>
-            <option value="Just for Fun">Just for Fun</option>
-          </select>
-        </div>
-        <div class="facetwrap">
-          <label for="event_facet_topics">Topic</label>
-          <select class="event-filter" id="event_facet_topics">
-            <option value="all">All</option>
-            <option value="Health &amp; Well-being">Health &amp; Well-being</option>
-            <option value="Husky Spirit &amp; Tradition">Husky Spirit &amp; Tradition</option>
-            <option value="Info Session">Info Session</option>
-            <option value="Meet a New Friend">Meet a New Friend</option>
-            <option value="Personal Identity Development">Personal Identity Development</option>
-          </select>
-        </div>
-        <div class="facetwrap">
-          <label for="event_facet_audience">Audience</label>
-          <select class="event-filter" id="event_facet_audience">
-            <option value="all">All</option>
-            <option value="BIPOC">BIPOC</option>
-            <option value="First Gen">First Gen</option>
-            <option value="International">International</option>
-            <option value="LGBTQ">LGBTQ</option>
-            <option value="STEM">STEM</option>
-            <option value="Transfer">Transfer</option>
-            <option value="Veteran">Veteran</option>
-            <option value="All first year students">All first year students</option>
-          </select>
-        </div>
-      </div>
-      <div id="event_facet_date" class="jump-link-row">
-        <span>Jump to:</span>
-        <a role="button" class="no_offset" href="#pagetop">Top of page</a>
-        <a role="button" class="offset" href="#day1695168000">Sep&nbsp;20</a>
-        <a role="button" class="offset" href="#day1695254400">Sep&nbsp;21</a>
-        <a role="button" class="offset" href="#day1695340800">Sep&nbsp;22</a>
-        <a role="button" class="offset" href="#day1695427200">Sep&nbsp;23</a>
-        <a role="button" class="offset" href="#day1695513600">Sep&nbsp;24</a>
-        <a role="button" class="offset" href="#day1695600000">Sep&nbsp;25</a>
-        <a role="button" class="offset" href="#day1695686400">Sep&nbsp;26</a>
-        <a role="button" class="offset" href="#day1695772800">Sep&nbsp;27</a>
-        <a role="button" class="offset" href="#day1695859200">Sep&nbsp;28</a>
-        <a role="button" class="offset" href="#day1695945600">Sep&nbsp;29</a>
       </div>
     </div>
-  </div>
+  </main>
   <script src="scripts.js"></script>
 </body>
 
