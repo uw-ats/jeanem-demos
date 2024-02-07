@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legend placement in radio groups</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="container mt-3 mb-3">
+    <h1>Radio group comparisons</h1>
+    <h2>Legend (or question) inside and outside the <code>role=radiogroup</code> container</h2>
+    <p>The markup for the next two examples use <code>divs</code> and ARIA roles</p>
+    <h3>Inside</h3>
+    <div id="aria-radio-group" role="radiogroup" aria-labelledby="question" class="border p-3 ats_border">
+      <div id="question">Which is the best color?</div>
+      <div>
+
+        <span id="colorOption_0" tabindex="0" role="radio" aria-checked="false" aria-labelledby="purple"><i
+            class="bi bi-circle"></i></span>
+        <span id="purple">Purple</span>
+
+        <span id="colorOption_1" tabindex="-1" role="radio" aria-checked="false" aria-labelledby="aubergine"><i
+            class="bi bi-circle"></i></span>
+        <span id="aubergine">Aubergine</span>
+
+        <span id="colorOption_2" tabindex="-1" role="radio" aria-checked="false" aria-labelledby="magenta"><i
+            class="bi bi-circle"></i></span>
+        <span id="magenta">Magenta</span>
+
+        <span id="colorOption_3" tabindex="-1" role="radio" aria-checked="false" aria-labelledby="all"><i
+            class="bi bi-circle"></i></span>
+        <span id="all">All of the above</span>
+
+      </div>
+    </div>
+
+
+    <h3>Outside</h3>
+
+    <div id="question2">Which of these choices is the best color?</div>
+    <div id="aria-radio-group2" role="radiogroup" aria-labelledby="question2" class="border p-3 ats_border">
+      <div>
+        <span id="colorOption2_0" tabindex="0" role="radio" aria-checked="false" aria-labelledby="green"><i
+            class="bi bi-circle"></i></span>
+        <span id="green">Green</span>
+
+        <span id="colorOption2_1" tabindex="-1" role="radio" aria-checked="false" aria-labelledby="pink"><i
+            class="bi bi-circle"></i></span>
+        <span id="pink">Pink</span>
+
+        <span id="colorOption2_2" tabindex="-1" role="radio" aria-checked="false" aria-labelledby="orange"><i
+            class="bi bi-circle"></i></span>
+        <span id="orange">Orange</span>
+
+        <span id="colorOption2_3" tabindex="-1" role="radio" aria-checked="false" aria-labelledby="all2"><i
+            class="bi bi-circle"></i></span>
+        <span id="all2">All of the above</span>
+      </div>
+
+    </div>
+    <hr />
+    <h2>Semantic HTML for comparison</h2>
+    <form>
+      <fieldset class="ml-3 border p-3 ats_border">
+        <legend>Here is another group of colors, which is the best?</legend>
+        <input name="colorOption" type="radio" id="yellow" />
+        <label for="yellow">Yellow</label>
+        <input name="colorOption" type="radio" id="peach" />
+        <label for="peach">Peach</label>
+        <input name="colorOption" type="radio" id="sky-blue" />
+        <label for="sky-blue">Sky Blue</label>
+        <input name="colorOption" type="radio" id="all" />
+        <label for="all">All of the above</label>
+      </fieldset>
+    </form>
+    <hr />
+
+    <p>Markup examples based on <a
+        href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/radiogroup_role">MDN's
+        ARIA:radiogroup role article</a> </p>
+    <p>Keyboard interaction from <a href="https://www.w3.org/WAI/ARIA/apg/patterns/radio/#keyboardinteraction">ARIA
+        Authoring Practices Radio Group Pattern</a></p>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+
+</html>
