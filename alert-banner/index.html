@@ -8,11 +8,39 @@
   </head>
   <body>
     <main>
-      <h1>Demo site</h1>
-      <div role="alert" style="background-color: lightgoldenrodyellow; padding: 1rem">
-        here is an alert that loads with the page
+      <h1>Role="alert" demo and notes</h1>
+      <div id="alert-me" role="alert">
+        <!-- empty div is placeholder for dynamically entered content -->
       </div>
+      <p>Things to know about role="alert"</p>
+      <ul>
+        <li>The alert role is a live region. In essence it is the same as setting aria-live="assertive" and aria-atomic="true". </li>
+        <li>Content needs to be loaded dynamically to trigger an announcement to the screen reader user. (Some screen readers will announce content on load, but this behavior is not consistent across screen readers.)
+          <pre><code>
+            &lt;script&gt;
+              message = () => {
+                document.getElementById("alert-me").textContent = "This may not be the log-in page you expected.";
+              };
+              message();
+            &lt;/script&gt;
+            </code></pre>
+
+        </li>
+        <li>In the static HTML there should be a placeholder div with role="alert". This preps the screen reader software to monitor that container for changes.
+            <pre><code>
+              &lt;div id="alert-me" role="alert"&gt;
+              &lt;!-- empty div is placeholder for dynamically entered content --&gt;
+              &lt;/div&gt;
+            </code></pre>
+        </li>
+        <li>See this <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Alert_Role">MDN article</a> for more information.</li>
+      </ul>
     </main>
-	<script src="scripts.js"></script>
+    <script>
+      message = () => {
+        document.getElementById("alert-me").textContent = "This may not be the log-in page you expected.";
+      };
+      message();
+      </script>
   </body>
 </html>

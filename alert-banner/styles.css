@@ -1,1 +1,7 @@
 /* styles here */
+
+#alert-me {
+    background-color: lightgoldenrodyellow; 
+    border: solid yellowgreen 2px;
+    padding: 1rem;
+}
