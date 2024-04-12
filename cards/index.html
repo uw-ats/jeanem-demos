@@ -13,73 +13,16 @@
 
 <body>
   <main class="w-50 mx-auto">
-    <h1>Card examples</h1>
-    <h2 class="mt-4">Grouped in section element</h2>
-    <section class="steps uw-section" aria-labelledby="card-group-heading">
-      <h3 id="card-group-heading">Key safety steps</h3>
-      <div class="row row-steps d-flex flex-nowrap">
-        <article class="col-md-6 col-12 col-lg-4 border p-3 m-3" aria-labelledby="pa">
-          <div class="content-wrapper step h-100">
-            <div class="upper-content">
-            </div>
-            <div class="content-block">
-              <h4 id="pa">Prevent accidents</h4>
-              <p></p>
-              <p>
-                Review the UW Accident Prevention Plan and your unit's
-                Supplemental Accident Prevention Plan.
-              </p>
-              <p></p>
-              <div class="btn-wrapper">
-                <a href="/workplace/accident-prevention-plan" aria-label="Read more about preventing accidents"
-                  title="Visit the Accident Prevention Plan page" data-once="PDFTagAdd">Read more</a>
-              </div>
-            </div>
-          </div>
-        </article>
+    <h1>Cards example</h1>
+    <p>In the example below, cards are grouped in an unordered list so that a screenreader or other assistive device
+      will announce the number of cards. An ordered list can be used as well.</p>
+    <p>For the cards themselves, use the <code>&lt;article&gt;</code> element with the <code>aria-labelledby</code>
+      attribute pointing to the card heading.
+    </p>
+    <p>For stand-alone cards, use the same technique with the article element and label, but do not put in a list.</p>
+    <p>View source for the HTML/ARIA markup.</p>
 
-        <article class="col-md-6 col-12 col-lg-4 border p-3 m-3" aria-labelledby="cst">
-          <div class="content-wrapper step h-100">
-            <div class="upper-content">
-            </div>
-            <div class="content-block">
-              <h4 id="cst">Complete safety training</h4>
-              <p></p>
-              <p>
-                Complete all required and recommended safety training courses
-                prior to beginning work with a hazard.
-              </p>
-              <p></p>
-              <div class="btn-wrapper">
-                <a href="/training" title="Visit the Training page" data-once="PDFTagAdd">Find your courses</a>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="col-md-6 col-12 col-lg-4 border p-3 m-3" aria-labelledby="rwi">
-          <div class="content-wrapper step h-100">
-            <div class="upper-content">
-            </div>
-            <div class="content-block">
-              <h4 id="rwi">Report workplace incidents</h4>
-              <p></p>
-              <p>
-                Review the steps for reporting incidents, the types of
-                incidents and reporting requirements.
-              </p>
-              <p></p>
-              <div class="btn-wrapper">
-                <a href="/workplace/incident-reporting" aria-label="Read more about reporting workplace incidents"
-                  title="Visit the Incident Reporting page" data-once="PDFTagAdd">Read more</a>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-    <h2 class="mt-3">Grouped in an unordered list</h2>
-    <h3>Key safety steps</h3>
+    <h2 class="mt-3">Key safety steps</h2>
     <div>
       <ul class="list-inline list-unstyled d-flex flex-nowrap">
         <li class="list-inline-item border p-3 m-3">
@@ -87,7 +30,7 @@
             <div class="content-wrapper step h-100">
               <div class="upper-content"></div>
               <div class="content-block">
-                <h4 id="pa2">Prevent accidents</h4>
+                <h3 id="pa2">Prevent accidents</h3>
                 <p></p>
                 <p>
                   Review the UW Accident Prevention Plan and your unit's
@@ -103,11 +46,11 @@
           </article>
         </li>
         <li class="list-inline-item border p-3 m-3">
-          <article aria-labelledby="123">
+          <article aria-labelledby="cst">
             <div class="content-wrapper step h-100">
               <div class="upper-content"></div>
               <div class="content-block">
-                <h4 id="123">Complete safety training</h4>
+                <h3 id="cst">Complete safety training</h3>
                 <p></p>
                 <p>
                   Complete all required and recommended safety training
@@ -122,11 +65,11 @@
           </article>
         </li>
         <li class="list-inline-item border p-3 m-3">
-          <article aria-labelledby="456">
+          <article aria-labelledby="rwi">
             <div class="content-wrapper step h-100">
               <div class="upper-content"></div>
               <div class="content-block">
-                <h4 id="456">Report workplace incidents</h4>
+                <h3 id="rwi">Report workplace incidents</h3>
                 <p></p>
                 <p>
                   Review the steps for reporting incidents, the types of
