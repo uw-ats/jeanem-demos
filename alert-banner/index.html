@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo site</title>    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <main>
-      <h1>Role="alert" demo and notes</h1>
-      <div id="alert-me" role="alert">
-        <!-- empty div is placeholder for dynamically entered content -->
-      </div>
-      <p>Things to know about role="alert"</p>
-      <ul>
-        <li>The alert role is a live region. In essence it is the same as setting aria-live="assertive" and aria-atomic="true". </li>
-        <li>Content needs to be loaded dynamically to trigger an announcement to the screen reader user. (Some screen readers will announce content on load, but this behavior is not consistent across screen readers.)
-          <pre><code>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo site</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main>
+    <h1>Role="alert" demo and notes</h1>
+    <div id="alert-me" role="alert">
+      <!-- empty div is placeholder for dynamically entered content -->
+    </div>
+    <p>Things to know about role="alert"</p>
+    <ul>
+      <li>The alert role is a live region. In essence it is the same as setting aria-live="assertive" and
+        aria-atomic="true". </li>
+      <li>Content needs to be loaded dynamically to trigger an announcement to the screen reader user. (Some screen
+        readers will announce content on load, but this behavior is not consistent across screen readers.)
+        <pre><code>
             &lt;script&gt;
               message = () => {
                 document.getElementById("alert-me").textContent = "This may not be the log-in page you expected.";
@@ -25,22 +30,39 @@
             &lt;/script&gt;
             </code></pre>
 
-        </li>
-        <li>In the static HTML there should be a placeholder div with role="alert". This preps the screen reader software to monitor that container for changes.
-            <pre><code>
+      </li>
+      <li>In the static HTML there should be a placeholder div with role="alert". This preps the screen reader software
+        to monitor that container for changes.
+        <pre><code>
               &lt;div id="alert-me" role="alert"&gt;
               &lt;!-- empty div is placeholder for dynamically entered content --&gt;
               &lt;/div&gt;
             </code></pre>
-        </li>
-        <li>See this <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Alert_Role">MDN article</a> for more information.</li>
-      </ul>
-    </main>
-    <script>
-      message = () => {
-        document.getElementById("alert-me").textContent = "This may not be the log-in page you expected.";
-      };
-      message();
-      </script>
-  </body>
+      </li>
+      <li>See this <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Alert_Role">MDN
+          article</a> for more information.</li>
+    </ul>
+
+
+  </main>
+  <script>
+    message = () => {
+      document.getElementById("alert-me").textContent = "This may not be the log-in page you expected.";
+    };
+    message();
+    dynamicAlert = () => {
+      let alertContainer = document.createElement("div");
+      alertContainer.setAttribute("id", "alert-me-2")
+      alertContainer.setAttribute("role", "alert");
+      document.body.appendChild(alertContainer);
+
+      alertContainer.textContent = "This alert container is dynamically added to the DOM and then the text is added. For dynamically added containers, this needs to be a two-step process in order for assistive devices to trigger an interruption."
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      dynamicAlert();
+    });
+  </script>
+
+</body>
+
 </html>

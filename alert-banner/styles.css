@@ -1,7 +1,13 @@
 /* styles here */
 
 #alert-me {
-    background-color: lightgoldenrodyellow; 
-    border: solid yellowgreen 2px;
-    padding: 1rem;
+  background-color: lightgoldenrodyellow;
+  border: solid yellowgreen 2px;
+  padding: 1rem;
+}
+
+#alert-me-2 {
+  background-color: bisque;
+  border: solid yellowgreen 2px;
+  padding: 1rem;
 }
