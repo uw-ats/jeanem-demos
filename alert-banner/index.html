@@ -49,7 +49,6 @@
     message = () => {
       document.getElementById("alert-me").textContent = "This may not be the log-in page you expected.";
     };
-    message();
     dynamicAlert = () => {
       let alertContainer = document.createElement("div");
       alertContainer.setAttribute("id", "alert-me-2")
@@ -59,6 +58,7 @@
       alertContainer.textContent = "This alert container is dynamically added to the DOM and then the text is added. For dynamically added containers, this needs to be a two-step process in order for assistive devices to trigger an interruption."
     }
     document.addEventListener("DOMContentLoaded", function () {
+      message();
       dynamicAlert();
     });
   </script>
