@@ -1,8 +1,40 @@
-/* RADIO BUTTONS */
-
 *:focus {
   outline: none;
 }
+/* body {
+  pointer-events: none;
+} */
+
+.enable-container-focus *:focus {
+  color: blue;
+  /* background-color: black;
+  text-decoration: underline; */
+  border: solid 2px blue;
+}
+.enable-element-focus:focus {
+  border: solid 2px blue;
+}
+
+/* MODAL */
+.modal {
+  width: 50%;
+  height: 50%;
+  overflow: auto;
+  background-color: white;
+}
+
+/* modal close button */
+#close-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#close-modal.bi-x-circle {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+/* RADIO BUTTONS */
 
 .radio-input {
   display: none;
@@ -27,7 +59,10 @@
   font-size: 2em;
 }
 
-.checkbox-input:checked + .checkbox-label {
+/* .checkbox-input:checked + .checkbox-label {
+  color: gold;
+} */
+.checkbox-label .bi-star-fill {
   color: gold;
 }
 

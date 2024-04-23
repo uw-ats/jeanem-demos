@@ -14,19 +14,8 @@ window.onclick = function (event) {
   }
 };
 
-const checkboxes = Array.from(document.querySelectorAll(".checkbox-input"));
-console.warn(checkboxes);
-checkboxes.forEach((checkbox) => {
-  const label = document.querySelector(`label[for="${checkbox.id}"]`);
-  const icon = label.querySelector("i");
-  console.warn(label);
-  console.warn(icon);
-  checkbox.addEventListener("change", function () {
-    console.warn(this.checked);
-    if (this.checked) {
-      icon.className = "bi bi-star-fill";
-    } else {
-      icon.className = "bi bi-star";
-    }
-  });
-});
+const init = () => {
+  selectStar();
+};
+
+init();
