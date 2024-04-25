@@ -1,6 +1,6 @@
-/* *:focus {
+*:focus {
   outline: none;
-} */
+}
 /* body {
   pointer-events: none;
 } */
@@ -58,11 +58,12 @@ main {
 }
 
 /* modal close button */
-#close-modal {
+.close-btn-position {
   position: absolute;
   top: 0;
   right: 0;
 }
+
 #close-modal.bi-x-circle {
   font-size: xx-large;
   font-weight: bold;

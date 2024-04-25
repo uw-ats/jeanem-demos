@@ -8,19 +8,25 @@ const openModal = () => {
   });
 };
 
-const addCloseButton = (modal, top = true) => {
+const closeArticleBtn = () => {
+  const articleModal = document.getElementById("article");
   const closeBtn = document.getElementById("close-modal");
+  const helpBtnCloseFirstTab = document.getElementById("close-first-focus");
+  const helpBtnModalFocus = document.getElementById("add-modal-focus");
+
   closeBtn.addEventListener("click", () => {
-    console.warn("close");
-    modal.close();
+    articleModal.close();
   });
-  if (top == false) {
-    console.warn("bottom");
-    modal.append(closeBtn);
-  } else {
-    console.warn("top");
-    modal.prepend(closeBtn);
-  }
+
+  helpBtnCloseFirstTab.addEventListener("click", () => {
+    // articleModal.prepend(document.getElementById(closeBtn));
+    articleModal.insertBefore(closeBtn, articleModal.firstChild);
+    // closeBtn.classList.add("close-btn-top");
+    // closeBtn.classList.remove("close-btn-bottom");
+  });
+  helpBtnModalFocus.addEventListener("click", () => {
+    articleModal.classList.add("enable-container-focus");
+  });
 };
 
-export { openModal, addCloseButton };
+export { openModal, closeArticleBtn };

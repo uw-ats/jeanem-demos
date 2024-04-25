@@ -42,22 +42,8 @@
                     </details>
                 </li>
                 <li>Open the article modal to view the embeded article then immediately close the modal via the Close
-                    button (note you will need to close the modal to get help, use the technique you used in step 2.)
-                    <details>
-                        <summary role="button" aria-expanded="false">Step 3 help!</i></summary>
-                        <ul>
-                            <li><button id="trap-focus" type="button">All of the sudden my focus is in the browser
-                                    chrome! Trap my focus in the modal</button>
-                            </li>
-                            <li><button id="close-focus" type="button">I can't get to the Close button, I need focus
-                                    indicators in this modal!</button>
-                            </li>
-                            <li><button id="close-first-focus" type="button">It is still too many tab stops to get to
-                                    the Close
-                                    button, make it the first tab stop!</button>
-                            </li>
-                        </ul>
-                    </details>
+                    button. Help buttons are in the modal.
+
 
 
                 </li>
@@ -95,12 +81,27 @@
             <h2 id="article-heading">Article on keyboard testing</h2>
             <button id="article-button" class="modal-button" aria-haspopup="dialog">Article</button>
             <dialog id="article" class="modal" aria-labelledby="article-heading">
+                <details>
+                    <summary role="button" aria-expanded="false">Step 3 help!</i></summary>
+                    <ul>
+                        <li><button id="trap-focus" type="button">All of the sudden my focus is in the browser
+                                chrome! Trap my focus in the modal</button>
+                        </li>
+                        <li><button id="add-modal-focus" type="button">I can't get to the Close button, I need focus
+                                indicators in this modal!</button>
+                        </li>
+                        <li><button id="close-first-focus" type="button">It is still too many tab stops to get to
+                                the Close
+                                button, make it the first tab stop!</button>
+                        </li>
+                    </ul>
+                </details>
                 <p>Here is a helpful article about keyboard testing from <a
                         href="https://knowbility.org/blog/2018/keyboard-testing-basics/">knowbility.org</a> </p>
                 <p>Note that the page is embedded in an iframe so their focus indicators work.</p>
                 <iframe src="https://knowbility.org/blog/2018/keyboard-testing-basics/" width="100%"
                     height="100%"></iframe>
-
+                <button type="button" id="close-modal" class="close-btn-position" arial-label="close">X</button>
             </dialog>
             <form>
                 <label for="text-input">Text Input:</label>
