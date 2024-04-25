@@ -1,5 +1,9 @@
-import { ratings } from "./src/ratings.js";
-import { openModal, addCloseButton } from "./src/dialogModal.js";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./static/bootstrap-icons.css";
+import "./styles.css";
+import "./inaccessible.css";
+import { ratings } from "./ratings.js";
+import { openModal, addCloseButton } from "./dialogModal.js";
 
 const details = () => {
   details.addEventListener("toggle", function () {
@@ -8,6 +12,7 @@ const details = () => {
 };
 
 const sideBarFocus = document.getElementById("sidebar-focus");
+console.warn(sideBarFocus);
 const tipsFocus = document.getElementById("tips-focus");
 
 sideBarFocus.addEventListener("click", () => {

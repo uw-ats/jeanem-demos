@@ -10,14 +10,17 @@ const openModal = () => {
 
 const addCloseButton = (modal, top = true) => {
   const closeBtn = document.getElementById("close-modal");
-  if (top == false) {
-    modal.append(closeBtn);
-  } else {
-    modal.prepend(closeBtn);
-  }
   closeBtn.addEventListener("click", () => {
+    console.warn("close");
     modal.close();
   });
+  if (top == false) {
+    console.warn("bottom");
+    modal.append(closeBtn);
+  } else {
+    console.warn("top");
+    modal.prepend(closeBtn);
+  }
 };
 
 export { openModal, addCloseButton };

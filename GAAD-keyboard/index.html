@@ -2,53 +2,167 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2024 GAAD keyboard practice</title>
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bad keyboard</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-  <main>
-    <h1>Keyboard practice</h1>
-    <form>
-      <label for="text-input">Text Input:</label>
-      <input type="text" id="text-input" name="text-input">
+    <header><a href="#main-content" id="skip-link">Skip to main content</a></header>
+    <div class="layout">
+        <aside>
+            <h2>Instructions</h2>
+            <p>Use the keyboard only for each step</p>
+            <ol>
+                <li>Start by using the keyboard to skip to the main content area
+                    <details>
+                        <summary role="button" aria-expanded="false">Step 1 help!</i></summary>
+                        <ul>
+                            <li><button id="sidebar-focus" type="button">Enable focus indicators in the sidebar</button>
+                            </li>
+                            <li><button id="skip-link-focus" type="button">Too many tab stops to get there - give me a
+                                    skip link</button>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+                <li>Tab to the Tips button an press Enter to read helpful tips on using a keyboard and use one of the
+                    tips to close the modal
+                    <details>
+                        <summary role="button" aria-expanded="false">Step 2 help!</i></summary>
+                        <ul>
+                            <li><button id="tips-focus" type="button">I need a focus indicator on the Tips for Testing
+                                    button!</button>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+                <li>Open the article modal to view the embeded article then immediately close the modal via the Close
+                    button (note you will need to close the modal to get help, use the technique you used in step 2.)
+                    <details>
+                        <summary role="button" aria-expanded="false">Step 3 help!</i></summary>
+                        <ul>
+                            <li><button id="trap-focus" type="button">All of the sudden my focus is in the browser
+                                    chrome! Trap my focus in the modal</button>
+                            </li>
+                            <li><button id="close-focus" type="button">I can't get to the Close button, I need focus
+                                    indicators in this modal!</button>
+                            </li>
+                            <li><button id="close-first-focus" type="button">It is still too many tab stops to get to
+                                    the Close
+                                    button, make it the first tab stop!</button>
+                            </li>
+                        </ul>
+                    </details>
 
-      <label for="password-input">Password:</label>
-      <input type="password" id="password-input" name="password-input">
 
-      <label for="textarea-input">Textarea:</label>
-      <textarea id="textarea-input" name="textarea-input"></textarea>
+                </li>
 
-      <label for="dropdown">Dropdown:</label>
-      <select id="dropdown" name="dropdown">
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-      </select>
 
-      <fieldset>
-        <legend>Radio Buttons:</legend>
-        <input type="radio" id="radio1" name="radio-group" value="radio1">
-        <label for="radio1">Radio 1</label>
-        <input type="radio" id="radio2" name="radio-group" value="radio2">
-        <label for="radio2">Radio 2</label>
-      </fieldset>
+                </li>
+            </ol>
+        </aside>
+        <main id="main-content">
+            <h1>Keyboard practice</h1>
+            <h2 id="tips-heading">How to test using a keyboard</h2>
+            <button id="tips-button" class="modal-button" aria-haspopup="dialog">Tips for testing</button>
+            <dialog id="tips-modal" class="modal" aria-labelledby="tips-heading">
+                <p>The following tips are from <a href="https://nomouse.org/">The #NoMouse Challenge"</a>. Use one of
+                    the keys in the tips to close this modal.</p>
+                <blockquote>
+                    <ul>
+                        <li>Press <strong>Tab</strong> to move to the next link, form element&nbsp;or button.</li>
+                        <li>Press <strong>Shift+Tab</strong> to move to the previous link, form element, or button.</li>
+                        <li>Press <strong>Enter</strong> or <strong>space bar</strong> to activate the current link or
+                            button.
+                        </li>
+                        <li>Use <strong>arrow keys</strong>, <strong>Escape</strong>, or other keys if doing so would
+                            seem
+                            to
+                            make sense.</li>
+                        <li>Some web and software applications include custom keyboard shortcuts.
+                            These can be helpful, but they require a lot of memorization and are
+                            sometimes difficult to find. Some applications include a link to "Accessibility" or
+                            "Keyboard
+                            shortcuts". For others, you may have to search the documentation.</li>
+                    </ul>
+                </blockquote>
+            </dialog>
+            <h2 id="article-heading">Article on keyboard testing</h2>
+            <button id="article-button" class="modal-button" aria-haspopup="dialog">Article</button>
+            <dialog id="article" class="modal" aria-labelledby="article-heading">
+                <p>Here is a helpful article about keyboard testing from <a
+                        href="https://knowbility.org/blog/2018/keyboard-testing-basics/">knowbility.org</a> </p>
+                <p>Note that the page is embedded in an iframe so their focus indicators work.</p>
+                <iframe src="https://knowbility.org/blog/2018/keyboard-testing-basics/" width="100%"
+                    height="100%"></iframe>
 
-      <fieldset>
-        <legend>Checkboxes:</legend>
-        <input type="checkbox" id="checkbox1" name="checkbox-group" value="checkbox1">
-        <label for="checkbox1">Checkbox 1</label>
-        <input type="checkbox" id="checkbox2" name="checkbox-group" value="checkbox2">
-        <label for="checkbox2">Checkbox 2</label>
-      </fieldset>
+            </dialog>
+            <form>
+                <label for="text-input">Text Input:</label>
+                <input type="text" id="text-input" name="text-input">
 
-      <input type="submit" value="Submit">
-    </form>
-  </main>
-  <script src="scripts.js"></script>
+                <label for="textarea-input">Textarea:</label>
+                <textarea id="textarea-input" name="textarea-input"></textarea>
+
+                <fieldset>
+                    <fieldset>
+                        <legend>How are you feeling about this exercise?</legend>
+                        <div>
+                            <input type="radio" id="radio1" name="radio-group" value="Very happy" class="radio-input">
+                            <label for="radio1" class="radio-label"><i class="bi bi-emoji-smile"></i></label>
+                        </div>
+                        <div>
+                            <input type="radio" id="radio2" name="radio-group" value="Happy" class="radio-input">
+                            <label for="radio2" class="radio-label"><i class="bi bi-emoji-laughing"></i></label>
+                        </div>
+                        <div>
+                            <input type="radio" id="radio3" name="radio-group" value="Okay" class="radio-input">
+                            <label for="radio3" class="radio-label"><i class="bi bi-emoji-neutral"></i></label>
+                        </div>
+                        <div>
+                            <input type="radio" id="radio4" name="radio-group" value="Sad" class="radio-input">
+                            <label for="radio4" class="radio-label"><i class="bi bi-emoji-frown"></i></label>
+                        </div>
+                        <div>
+                            <input type="radio" id="radio5" name="radio-group" value="Mad" class="radio-input">
+                            <label for="radio5" class="radio-label"><i class="bi bi-emoji-angry"></i></label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>How do you rate this page for keyboard accessibility</legend>
+                        <div>
+                            <input type="checkbox" id="checkbox1" value="checkbox1" class="checkbox-input">
+                            <label for="checkbox1" class="checkbox-label"><i class="bi bi-star"></i></label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox2" value="checkbox2" class="checkbox-input">
+                            <label for="checkbox2" class="checkbox-label"><i class="bi bi-star"></i></label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox3" value="checkbox3" class="checkbox-input">
+                            <label for="checkbox3" class="checkbox-label"><i class="bi bi-star"></i></label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox4" value="checkbox4" class="checkbox-input">
+                            <label for="checkbox4" class="checkbox-label"><i class="bi bi-star"></i></label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox5" value="checkbox5" class="checkbox-input">
+                            <label for="checkbox5" class="checkbox-label"><i class="bi bi-star"></i></label>
+                        </div>
+                    </fieldset>
+
+                    <input type="submit" value="Submit">
+            </form>
+        </main>
+    </div>
+    <script src="js/main.js" type="module"></script>
 </body>
 
 </html>
