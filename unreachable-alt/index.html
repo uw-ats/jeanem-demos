@@ -12,6 +12,7 @@
 <body>
   <main>
     <h1>Work-around for unreachable canvas/image attributes</h1>
+    <p>Tested 05-24-2024 on JAWs and NVDA.</p>
     <p>These are examples of work-arounds for adding arial-labels to unreachable canvas or images. That is,
       scenarios where the developer cannot pass the attribute through to a third party library that renders the canvas
       element. </p>
@@ -19,7 +20,7 @@
 
     <h2>First example</h2>
     <p>A wrapper
-      <code>&lt;div&gt;</code> with <code>role="img"</code> and <code>aria-label</code>.
+      <code>div</code> with <code>role="img"</code> and <code>aria-label</code>.
     </p>
     <div class="chart-container" role="img" aria-label="A red box">
       <canvas role="img" id="myCanvas" width="100" height="100" style="border:1px solid #d3d3d3;">
@@ -28,8 +29,8 @@
     </div>
 
     <h2>Second example</h2>
-    <p>Same as above but an additional <code>&lt;div&gt;</code> between the wrapper <code>&lt;div&gt;</code> and the
-      canvas element. This intermediate <code>&lt;div&gt;</code> is set with <code>aria-hidden="true"</code>. </p>
+    <p>Same as above but an additional <code>div</code> between the wrapper <code>div</code> and the
+      canvas element. This intermediate <code>div</code> is set with <code>aria-hidden="true"</code>. </p>
     <div class="chart-container" role="img" aria-label="A blue box">
       <div aria-hidden="true">
         <canvas role="img" id="myCanvas-2" width="100" height="100" style="border:1px solid #d3d3d3;">
@@ -39,9 +40,12 @@
     </div>
 
     <h2 style="text-decoration: line-through;">Third example</h2>
-    </div>
-    <p>Same as first example, but no <code>role="img"</code> in the wrapper <code>&lt;div&gt;</code> </p>
-    <p><strong>This example doesn't announce "graphic" in NVDA even though it is in the canvas element. </strong></p>
+
+    <p>Same as first example, but no <code>role="img"</code> in the wrapper <code>div</code> </p>
+    <p><strong>This example doesn't announce "graphic" in NVDA even though it is in the canvas element </strong>
+      although it does announce the aria-label from the <code>div</code>.
+      JAWs announces "graphic", but (as expected ?) since there is no role in
+      the <code>div</code>, JAWs doesn't announce the aria-label value. </p>
 
     <div class="chart-container" aria-label="A green box">
       <canvas role="img" id="myCanvas-3" width="100" height="100" style="border:1px solid #d3d3d3;">
