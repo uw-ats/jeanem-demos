@@ -38,17 +38,17 @@
       </div>
     </div>
 
-
-    <h2>Third example</h2>
-    <p>This example doesn't announce "graphic" in NVDA even though it is in the canvas element. </p>
-    <div style="text-decoration: line-through;">
-      <p>Same as first example, but no <code>role="img"</code> in the wrapper <code>&lt;div&gt;</code> </p>
-      <div class="chart-container" aria-label="A blue box">
-        <canvas role="img" id="myCanvas-3" width="100" height="100" style="border:1px solid #d3d3d3;">
-          Your browser does not support the HTML canvas tag. (Blue box)
-        </canvas>
-      </div>
+    <h2 style="text-decoration: line-through;">Third example</h2>
     </div>
+    <p>This example doesn't announce "graphic" in NVDA even though it is in the canvas element. </p>
+
+    <p>Same as first example, but no <code>role="img"</code> in the wrapper <code>&lt;div&gt;</code> </p>
+    <div class="chart-container" aria-label="A green box">
+      <canvas role="img" id="myCanvas-3" width="100" height="100" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML canvas tag. (Green box)
+      </canvas>
+    </div>
+
 
     <script>
       var canvas = document.getElementById("myCanvas");
