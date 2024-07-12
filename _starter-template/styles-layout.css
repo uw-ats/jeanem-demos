@@ -1,0 +1,42 @@
+.site {
+  margin: 2rem;
+  display: grid;
+  /* mobile first */
+  grid-template-areas:
+    "skip-link skip-link"
+    "masthead masthead"
+    "main sidebar"
+    "footer footer";
+  gap: 1rem;
+}
+
+header {
+  grid-area: masthead;
+  background-color: #4b2383;
+  color: white;
+}
+main {
+  grid-area: main;
+}
+
+aside {
+  grid-area: sidebar;
+  background-color: #c5b4e3;
+  color: #32006e;
+}
+footer {
+  grid-area: footer;
+  background-color: #4b2383;
+  color: white;
+}
+
+@media screen and (min-width: 600px) {
+  .site {
+    margin: 1rem;
+    grid-template-areas:
+      "skip-link skip-link skip-link"
+      "masthead masthead masthead"
+      "main main sidebar"
+      "footer footer footer";
+  }
+}
