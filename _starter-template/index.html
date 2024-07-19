@@ -16,7 +16,7 @@
   </head>
 
   <body class="site">
-    <a href="#main">Skip to main content</a>
+    <a href="#main" class="skip-link">Skip to main content</a>
     <header class="masthead">Jeane's demos</header>
     <main id="main" class="main">
       <h1>[HEADING ONE]</h1>
@@ -26,7 +26,12 @@
         cards. An ordered list can be used as well.
       </p>
     </main>
-    <aside class="aside">related information</aside>
+    <aside class="aside inner" aria-labelledby="related-demos">
+      <h2 id="related-demos">Related demos</h2>
+    </aside>
+    <aside class="aside outer" aria-labelledby="related-info">
+      <h2 id="related-info">Related information</h2>
+    </aside>
     <footer class="footer">
       <p>my footer</p>
     </footer>
