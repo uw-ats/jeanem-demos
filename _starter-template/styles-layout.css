@@ -1,18 +1,28 @@
-.skip-link {
-  position: absolute;
-  top: 1000px;
-  left: 1rem;
+body,
+html {
+  /* Ensures text can break and wrap to prevent overflow */
+  overflow-wrap: break-word;
+
+  /* Optional: Break words at arbitrary points if needed to prevent overflow */
+  word-break: break-word; /* 'break-all' to break at any character, but 'break-word' is usually better for readability */
+
+  /* Automatically add hyphens when breaking words */
+  hyphens: auto;
+}
+html {
+  font-size: 100%; /* or 16px, which is the default for most browsers */
 }
 
-.skip-link:focus {
-  top: 10px;
-  padding: 1rem;
-  background-color: #e93cac;
-  color: white;
+body {
+  font-size: 1rem; /* Equal to the base font size */
+}
+
+h1 {
+  font-size: 2rem; /* Scales up based on the base font size */
 }
 
 .site {
-  margin: 2rem;
+  /* margin: 2rem; */
   display: grid;
   /* mobile first */
   grid-template-areas:
@@ -54,7 +64,7 @@ footer {
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .site {
-    margin: 1rem;
+    /* margin: 1rem; */
     grid-template-areas:
       "skip-link skip-link"
       "masthead masthead"
@@ -67,12 +77,15 @@ footer {
 
 @media screen and (min-width: 1024px) {
   .site {
-    margin: 1rem;
     grid-template-areas:
-      "skip-link skip-link skip-link"
-      "masthead masthead masthead"
-      "main sidebar-inner sidebar-outer"
-      "footer footer footer";
-    grid-template-columns: 2fr 2fr 1fr;
+      ". skip-link skip-link skip-link ."
+      ". masthead masthead masthead ."
+      ". main sidebar-inner sidebar-outer ."
+      ". footer footer footer .";
+    /* care of co-pilot ... */
+    grid-template-columns: auto 2fr minmax(5%, 1fr) minmax(5%, 1fr) auto;
+    justify-content: stretch; /* Ensures the auto columns stretch to fill the available space */
+    width: 100%;
+    max-width: 100%; /* Ensures the grid uses the full width of its container */
   }
 }

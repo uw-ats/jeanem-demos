@@ -1,0 +1,12 @@
+.skip-link {
+  position: absolute;
+  top: 10000px;
+  left: 1rem;
+}
+
+.skip-link:focus {
+  top: 10px;
+  padding: 1rem;
+  background-color: #e93cac;
+  color: white;
+}
